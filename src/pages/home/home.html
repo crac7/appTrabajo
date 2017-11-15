@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Tienda Express
+    </ion-title>
+    <button   ion-button
+              icon-only
+              menuToggle>
+     <ion-icon name="menu"></ion-icon>
+   </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<button ion-button block (click)="login()">Login con Facebook</button>
+<ion-card *ngIf="userData">
+		<ion-card-header> {{ userData.username}} </ion-card-header>
+		<img [src]="userData.picture">
+		<ion-card-content>
+		 <p>Email: {{ userData.email }}	</p>
+		 <p>Frist Name: {{ userData.frist_name }}	</p>
+		 </ion-card-content>
+</ion-card>
+</ion-content>
+
+<ion-menu id="menu" persistent="true" side="right" [content]="content">
+
+
+</ion-menu>

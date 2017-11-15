@@ -1,0 +1,8 @@
+{
+  "name": "TiendaExpress",
+  "app_id": "c062ced0",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+     Tienda Express
+    </ion-title>
+    <button   ion-button
+              icon-only
+              (click)="mostrarMenu()">
+     <ion-icon name="menu"></ion-icon>
+   </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+	<ion-item>
+		<ion-label color="primary" stacked>Email</ion-label>
+		<ion-input [(ngModel)]="user.email" type="email" placeholder="Email"></ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-label color="primary" stacked>Passwrod</ion-label>
+		<ion-input [(ngModel)]="user.password" type="password" placeholder="Passwrod"></ion-input>
+	</ion-item>
+</ion-list>
+
+<div padding>
+	  <button ion-button block (tap)="login()">Login con Facebook</button>
+	<button ion-button block (tap)="loginFacebook()">Inicia Session con Facebook</button>
+	<button ion-button  block (tap)="Registrate()">Registrate</button>
+</div>
+</ion-content>
+
+
+<ion-menu id="nav" persistent="true" side="right" [content]="content">
+
+
+</ion-menu>

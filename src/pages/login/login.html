@@ -3,11 +3,6 @@
     <ion-title>
      Tienda Express
     </ion-title>
-    <button   ion-button
-              icon-only
-              (click)="mostrarMenu()">
-     <ion-icon name="menu"></ion-icon>
-   </button>
   </ion-navbar>
 </ion-header>
 
@@ -24,7 +19,7 @@
 </ion-list>
 
 <div padding>
-	  <button ion-button block (tap)="login()">Login con Facebook</button>
+	  <button ion-button block (tap)="signInWithFacebook()">Login con Facebook</button>
 	<button ion-button block (tap)="loginFacebook()">Inicia Session con Facebook</button>
 	<button ion-button  block (tap)="Registrate()">Registrate</button>
 </div>

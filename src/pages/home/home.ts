@@ -1,21 +1,33 @@
 import { Component } from '@angular/core';
-import { NavController ,NavParams , MenuController } from 'ionic-angular';
+import { NavController ,NavParams  } from 'ionic-angular';
 import firebase from 'firebase';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
-import {MenuPage} from '../menu/menu';
+import { MenuPage } from '../menu/menu';
+import { UbicacionProvider } from '../../providers/ubicacion/ubicacion';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
  userData=null;
-  constructor(public navCtrl: NavController, private facebook: Facebook, private navParams:NavParams, private menuCtrl :MenuController) {
-      this.userData = {
+
+
+ lat: number = 51.678418;
+ lng: number = 7.809007;
+
+ 
+  constructor(public navCtrl: NavController,
+              private facebook: Facebook,
+              private navParams:NavParams,
+              private _ubicacion: UbicacionProvider) {
+      /*this.userData = {
        email:  navParams.get('email'),
        first_name:  navParams.get('first_name'),
        picture:  navParams.get('picture'),
        username:  navParams.get('username')
-       };
+     };*/
+
+      // this._ubicacion.iniciar_localizacion();
 
   }
   login(){
@@ -25,7 +37,5 @@ export class HomePage {
     })
    })
   }
-  mostrarMenu(){
-     this.menuCtrl.toggle();
-  }
+
 }

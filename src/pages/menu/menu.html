@@ -1,16 +1,27 @@
- <ion-menu [content]="content">
+<ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Pages</ion-title>
+      <ion-title>
+            <ion-avatar item-start>
+               <img [src]="userData.picture">
+            </ion-avatar>
+              <h2> {{ userData.uid}} </h2>
+      </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
-      <button menuClose ion-item>
-        Opcion 1
+      <button ion-item (click)="openPage(homePage)">
+        Home
       </button>
-      <button menuClose ion-item>
-        Opcion 2
+      <button ion-item (click)="openPage(friendsPage)">
+        Friends
+      </button>
+      <button ion-item (click)="openPage(eventsPage)">
+        Events
+      </button>
+      <button ion-item (click)="closeMenu()">
+        Close Menu
       </button>
     </ion-list>
   </ion-content>

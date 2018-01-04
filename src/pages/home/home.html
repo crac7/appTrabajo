@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-     Tienda Express
+    Apps Trabajo
     </ion-title>
     <button   ion-button
               icon-only
@@ -12,10 +12,21 @@
 </ion-header>
 
 <ion-content>
-  <agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-map [latitude]="usuario1.lat" [longitude]="usuario1.lng" [zoom]="17">
+  <agm-marker [latitude]="usuario1.lat"
+              [longitude]="usuario1.lng"
+              iconUrl="assets/imgs/empleado.png">
+  </agm-marker>
+  <agm-marker [latitude]="usuario2.lat"
+              [longitude]="usuario2.lng"
+              iconUrl="assets/imgs/empleado.png">
+  </agm-marker>
 </agm-map>
+<div>
+
+</div>
 </ion-content>
+
 <!--<button ion-button block (click)="login()">Login con Facebook</button>
 <ion-card *ngIf="userData">
 		<ion-card-header> {{ userData.username}} </ion-card-header>
@@ -24,10 +35,10 @@
 		 <p>Email: {{ userData.email }}	</p>
 		 <p>Frist Name: {{ userData.frist_name }}	</p>
 		 </ion-card-content>
-</ion-card>-->
+</ion-card>
 
 
 <ion-menu id="menu" persistent="true" side="right" [content]="content">
 
 
-</ion-menu>
+</ion-menu>-->

@@ -10,32 +10,32 @@ import { UbicacionProvider } from '../../providers/ubicacion/ubicacion';
 })
 export class HomePage {
  userData=null;
+ usuario1:any={};
+ usuario2:any={};
+  public useruid=null;
 
 
- lat: number = 51.678418;
- lng: number = 7.809007;
-
- 
   constructor(public navCtrl: NavController,
               private facebook: Facebook,
               private navParams:NavParams,
-              private _ubicacion: UbicacionProvider) {
-      /*this.userData = {
-       email:  navParams.get('email'),
-       first_name:  navParams.get('first_name'),
-       picture:  navParams.get('picture'),
-       username:  navParams.get('username')
-     };*/
+              private _ubicacion: UbicacionProvider,
+              ) {
+               this._ubicacion.ubicacion();
+                this._ubicacion.usuario1.valueChanges()
+                    .subscribe(data =>{
+                      this.usuario1 = data;
+                    })
 
-      // this._ubicacion.iniciar_localizacion();
+
+                     this._ubicacion.usuario2.valueChanges()
+                         .subscribe(data =>{
+                           this.usuario2 = data;
+                         })
+
+
 
   }
-  login(){
-   this.facebook.login(['email','public_profile']).then((response: FacebookLoginResponse) => {
-    this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)',[]).then(profile => {
-       this.userData= {email: profile['email'], first_name: profile['first_name'], picture: profile['picture_large']['data']['url'],username: profile['name']};
-    })
-   })
-  }
+
+
 
 }

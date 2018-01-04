@@ -18,9 +18,11 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { AgmCoreModule } from '@agm/core';
 
 import { LoginPage } from '../pages/login/login';
+import { TabsPage } from '../pages/tabs/tabs';
 import { MenuPage } from '../pages/menu/menu';
 import { UbicacionProvider } from '../providers/ubicacion/ubicacion';
 import { UsuarioProvider } from '../providers/usuario/usuario';
+import { IonicStorageModule } from '@ionic/storage';
 /*
 firebase.initializeApp({
      apiKey: "AIzaSyB2hysmMp3kA96yZBZTc5zyXn5TBFyofYI",
@@ -30,11 +32,7 @@ firebase.initializeApp({
     storageBucket: "tiendaexpress-107f0.appspot.com",
     messagingSenderId: "88038932763"
 });*/
-// refavtor por router
-var links =[
- { component: LoginPage, name:'Login', segment:'Login'},
- { component:  HomePage, name:'Home' , segment:'Home' }
-];
+
 
 
 @NgModule({
@@ -43,10 +41,12 @@ var links =[
     HomePage,
     LoginPage,
     MenuPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp, links),
+    IonicModule.forRoot(MyApp),
+     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -59,7 +59,8 @@ var links =[
     MyApp,
     HomePage,
     LoginPage,
-    MenuPage
+    MenuPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
